@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deployment-blue
+  namespace: blue-green-istio
+  labels:
+    app: myapp
+    color: blue
+#    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+      color: blue
+#      version: v1
+  template:
+    metadata:
+      labels:
+        app: myapp
+        color: blue
+#        version: v1
+    spec:
+      containers:
+      - name: myapp
+        image: aramirol/blue-green-deployment:0.0.1
+        ports:
+        - containerPort: 80

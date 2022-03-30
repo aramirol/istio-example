@@ -1,0 +1,26 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: myapp-virtualservice
+  namespace: blue-green-istio
+spec:
+  hosts:
+  - "app.istio.demo.lab"
+  gateways:
+  - myapp-gateway
+  http:
+  - name: myapp-test
+    match:
+    - headers:
+        cookie:
+          regex: "^(.*?;)?(test=true)(;.*)?$"
+    route:
+    - destination:
+        host: myapp-service
+        subset: green
+
+  - name: myapp-default
+    route:
+    - destination:
+        host: myapp-service
+        subset: blue

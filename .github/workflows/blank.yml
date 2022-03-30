@@ -1,0 +1,19 @@
+name: git-sync
+
+on: 
+  - push
+  - delete
+
+jobs:
+  sync_macos:
+    runs-on: macos-latest
+    name: Git Sync MacOS
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - uses: aramirol/git-sync@v0.1
+      with:
+        gitlab-url: ${{ secrets.TARGET_URL }}
+        gitlab-username: ${{ secrets.TARGET_USERNAME }}
+        gitlab-token: ${{ secrets.TARGET_TOKEN }}

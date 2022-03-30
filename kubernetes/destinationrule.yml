@@ -1,0 +1,20 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: myapp-destinationrule
+  namespace: blue-green-istio
+spec:
+  host: myapp-service
+  trafficPolicy:
+    loadBalancer:
+      consistentHash:
+        httpCookie:
+          name: route
+          ttl: 2880s
+  subsets:
+  - name: blue
+    labels:
+      color: blue
+  - name: green
+    labels:
+      color: green

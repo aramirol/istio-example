@@ -1,0 +1,1 @@
+while : ;do export GREP_COLOR='1;96';curl -s  app.istio.demo.lab:32355 | grep --color=always "Blue" ; export GREP_COLOR='1;92'; curl -s  app.istio.demo.lab:32355 | grep --color=always "Green" ; sleep 1; done
