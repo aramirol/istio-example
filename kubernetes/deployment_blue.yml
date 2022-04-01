@@ -2,27 +2,31 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: myapp-deployment-blue
-  namespace: blue-green-istio
+  namespace: istio-example-bg
   labels:
     app: myapp
     color: blue
-#    version: v1
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: myapp
       color: blue
-#      version: v1
   template:
     metadata:
       labels:
         app: myapp
         color: blue
-#        version: v1
     spec:
       containers:
       - name: myapp
-        image: aramirol/blue-green-deployment:0.0.1
+        image: aramirol/bluegreen-example:0.0.1
+        resources:
+          limits:
+            memory: 50Mi
+            cpu: 50m
+          requests:
+            memory: 10Mi
+            cpu: 10m
         ports:
         - containerPort: 80

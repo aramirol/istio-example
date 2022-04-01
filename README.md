@@ -44,7 +44,7 @@ Deploy all lab environment included into kubernetes folder using the `all.yml`:
 
 ```sh
 $ kubectl apply -f kubernetes/all.yml
-    namespace/blue-green-istio created
+    namespace/istio-example-bg created
     service/myapp-service created
     gateway.networking.istio.io/myapp-gateway created
     destinationrule.networking.istio.io/myapp-destinationrule created
@@ -109,7 +109,7 @@ To destroy all lab and clean the environment, just use the all.yml again:
 
 ```sh
 $ kubectl delete -f kubernetes/all.yml
-    namespace "blue-green-istio" deleted
+    namespace "istio-example-bg" deleted
     service "myapp-service" deleted
     gateway.networking.istio.io "myapp-gateway" deleted
     destinationrule.networking.istio.io "myapp-destinationrule" deleted

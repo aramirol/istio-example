@@ -2,7 +2,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
   name: myapp-destinationrule
-  namespace: blue-green-istio
+  namespace: istio-example-bg
 spec:
   host: myapp-service
   trafficPolicy:
