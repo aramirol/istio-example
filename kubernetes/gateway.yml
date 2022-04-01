@@ -2,7 +2,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: myapp-gateway
-  namespace: blue-green-istio
+  namespace: istio-example-bg
 spec:
   selector:
     istio: ingressgateway

@@ -17,7 +17,7 @@ pipeline{
             steps {
                 script {
                     NAMESPACE_EXIST = sh (
-                        script: "kubectl get namespaces --kubeconfig=/var/jenkins_home/.kube/kubeconfig/config | grep blue-green-istio | wc -l",
+                        script: "kubectl get namespaces --kubeconfig=/var/jenkins_home/.kube/kubeconfig/config | grep istio-example-bg | wc -l",
                         returnStdout: true
                     ).trim()
                     echo "Namespace Count: ${NAMESPACE_EXIST}"
@@ -30,7 +30,7 @@ pipeline{
                 script {
                     if ("${NAMESPACE_EXIST}" == "1") {
                         ACTIVE_COLOR = sh (
-                            script: "kubectl get virtualservice -n blue-green-istio myapp-virtualservice -o jsonpath='{.spec.http[1].route[0].destination.subset}' --kubeconfig=/var/jenkins_home/.kube/kubeconfig/config",
+                            script: "kubectl get virtualservice -n istio-example-bg myapp-virtualservice -o jsonpath='{.spec.http[1].route[0].destination.subset}' --kubeconfig=/var/jenkins_home/.kube/kubeconfig/config",
                             returnStdout: true
                         ).trim()
                     } else {
