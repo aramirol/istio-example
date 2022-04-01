@@ -90,7 +90,7 @@ pipeline{
             steps {
                script {
                    if ("${ACTIVE_COLOR}" != 'white') {
-                        sh "kubectl replace -f kubernetes/virtualservice_${NEW_COLOR}.yml -n blue-green-istio --kubeconfig=/var/jenkins_home/.kube/kubeconfig/config"
+                        sh "kubectl replace -f kubernetes/virtualservice_${NEW_COLOR}.yml -n istio-example-bg --kubeconfig=/var/jenkins_home/.kube/kubeconfig/config"
                    }
                 } 
             }
