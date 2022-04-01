@@ -1,6 +1,6 @@
 # istio-example
 
-[![git-sync](https://github.com/aramirol/istio-example/actions/workflows/blank.yml/badge.svg)](https://github.com/aramirol/istio-example/actions/workflows/blank.yml)
+[![git-sync](https://github.com/aramirol/istio-example/actions/workflows/git-sync.yml/badge.svg)](https://github.com/aramirol/istio-example/actions/workflows/git-sync.yml)
 
 ## What is?
 
