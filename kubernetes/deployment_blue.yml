@@ -21,5 +21,12 @@ spec:
       containers:
       - name: myapp
         image: aramirol/bluegreen-example:0.0.1
+        resources:
+          limits:
+            memory: 50Mi
+            cpu: 50m
+          requests:
+            memory: 10Mi
+            cpu: 10m
         ports:
         - containerPort: 80
