@@ -6,7 +6,7 @@
 
 [![Kubernetes](https://img.shields.io/badge/kubernetes-v1.19.x-blue?logo=kubernetes&logoColor=white)](https://github.com/aramirol/istio-example)
 [![Istio](https://img.shields.io/badge/istio-v1.12.x-blue?logo=istio&logoColor=white)](https://github.com/aramirol/istio-example)
-[![Image](https://img.shields.io/badge/image-aramirol/blue__green__deployment-blue?logo=docker&logoColor=white)](https://hub.docker.com/r/aramirol/blue-green-deployment)
+[![Image](https://img.shields.io/badge/image-aramirol/bluegreen__example-blue?logo=docker&logoColor=white)](https://hub.docker.com/r/aramirol/bluegreen-example)
 [![License](https://img.shields.io/badge/license-MIT-green?logo=github)](https://github.com/aramirol/istio-example/blob/main/LICENSE.md)
 
 This repository is an example to launch a simple `blue/green deployment` based on the Istio configuration.
